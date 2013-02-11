@@ -1,41 +1,3 @@
-Namespace.js
-============
-
-this library provide namespace. it is all. very simple!
-
-[![build status](https://secure.travis-ci.org/nazomikan/NamespaceJS.png)](http://travis-ci.org/nazomikan/NamespaceJS)
-
-## Usage
-
-In browser include single javascript file.
-
-    <script type="text/javascript" src="namespace.js"></script>
-
-On server install PubsubJS via npm first:
-
-    npm install namespacejs
-
-and then include it in your project with:
-
-    var Namespace = require('namespacejs');
-
-##Example Usage
-
-###Namespace#means
-`means` exports object to namespace.
-For example, object export to "aaa.bbb.ccc" can be written using NamespaceJS as follows.
-
-    (function () {
-        var obj = {a: 1};
-        Namespace.create('aaa.bbb.ccc').means(obj);
-
-        assert(aaa.bbb.ccc, obj); // true
-    }());
-
-##License:
-<pre>
-(The MIT License)
-
 Copyright (c) 2013 nazomikan
 https://github.com/nazomikan/NamespaceJS
 
@@ -57,5 +19,3 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</pre>
-
