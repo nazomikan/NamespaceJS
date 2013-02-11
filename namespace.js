@@ -13,12 +13,13 @@
     , local = {}
     ;
 
-  function Namespace(namespaceStr) {
+  function Namespace(namespaceStr, context) {
     var spaces = namespaceStr.split('.')
       , name = spaces.pop()
+      , context = context || global
       ;
 
-    this.namespace = local.createNamespace(spaces);
+    this.namespace = local.createNamespace(spaces, context);
     this.name = name;
   }
 
@@ -39,23 +40,22 @@
     namespace[name] = entity;
   };
 
-  local.createNamespace = function (spaces) {
-    var obj = global
-      , space
+  local.createNamespace = function (spaces, context) {
+    var space
       , i
       , l
       ;
 
     for (i = 0, l = spaces.length; i < l; i++) {
       space = spaces[i];
-      if (isPrimitive(obj[space])) {
+      if (isPrimitive(context[space])) {
         throw new Error('namespace ' + spaces.join('.') + ' already exist and '+ space +' is primitive');
       }
-      obj[space] = (obj[space] == null) ? {} : obj[space];
-      obj = obj[space];
+      context[space] = (context[space] == null) ? {} : context[space];
+      context = context[space];
     }
 
-    return obj;
+    return context;
   };
 
   function createObject(obj) {

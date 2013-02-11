@@ -1,4 +1,4 @@
-Namespace.js
+NamespaceJS
 ============
 
 this library provide namespace. it is all. very simple!
@@ -32,6 +32,14 @@ For example, object export to "aaa.bbb.ccc" can be written using NamespaceJS as 
         assert(aaa.bbb.ccc, obj); // true
     }());
 
+if you want to export under the local namespace as follow
+
+    (function () {
+        var local = {}, obj = {a: 1};
+        Namespace.create('aaa.bbb.ccc', local).means(obj);
+
+        assert(local.aaa.bbb.ccc, obj); // true
+    }());
 ##License:
 <pre>
 (The MIT License)

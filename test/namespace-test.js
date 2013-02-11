@@ -37,6 +37,17 @@ describe('Namespace', function () {
       assert.equal('hoge', aaa.ccc);
     });
 
+    it('should export object to context when given context', function () {
+      var local = {}
+        , namespace = new Namespace('aaa.bbb', local)
+        , exist_global_aaa = global.hasOwnProperty('aaa')
+        , exist_local_aaa = local.hasOwnProperty('aaa')
+        ;
+
+      assert.equal(false, exist_global_aaa);
+      assert.equal(true, exist_local_aaa);
+    });
+
     it('should raise err when namespace already exists and it is string(primitive)', function () {
       var message = 'namespace aaa already exist and aaa is primitive'
         ;
@@ -89,6 +100,17 @@ describe('Namespace', function () {
       assert.equal(false, exist_aaa);
     });
 
+    it('should export object to context when given context', function () {
+      var local = {}
+        , namespace = Namespace.create('aaa.bbb', local)
+        , exist_global_aaa = global.hasOwnProperty('aaa')
+        , exist_local_aaa = local.hasOwnProperty('aaa')
+        ;
+
+      assert.equal(false, exist_global_aaa);
+      assert.equal(true, exist_local_aaa);
+    });
+
     it('should reuse namespace when namespace already exists and it is object', function () {
       var exist_aaa_bbb
         ;
@@ -139,6 +161,15 @@ describe('Namespace', function () {
 
       Namespace.create('aaa.bbb.ccc').means(obj);
       assert.equal(obj, aaa.bbb.ccc);
+    });
+
+    it('should define under the local namespace', function () {
+      var local = {}
+        , obj = {}
+        ;
+
+      Namespace.create('aaa.bbb.ccc', local).means(obj);
+      assert.equal(obj, local.aaa.bbb.ccc);
     });
   });
 
