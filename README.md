@@ -29,7 +29,7 @@ For example, object export to "aaa.bbb.ccc" can be written using NamespaceJS as 
         var obj = {a: 1};
         Namespace.create('aaa.bbb.ccc').means(obj);
 
-        assert(aaa.bbb.ccc, obj); // true
+        assert.equal(aaa.bbb.ccc, obj); // true
     }());
 
 if you want to export under the local namespace as follow
@@ -38,7 +38,7 @@ if you want to export under the local namespace as follow
         var local = {}, obj = {a: 1};
         Namespace.create('aaa.bbb.ccc', local).means(obj);
 
-        assert(local.aaa.bbb.ccc, obj); // true
+        assert.equal(local.aaa.bbb.ccc, obj); // true
     }());
 ##License:
 <pre>
