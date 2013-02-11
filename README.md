@@ -11,7 +11,7 @@ In browser include single javascript file.
 
     <script type="text/javascript" src="namespace.js"></script>
 
-On server install PubsubJS via npm first:
+On server install NamespaceJS via npm first:
 
     npm install namespacejs
 
