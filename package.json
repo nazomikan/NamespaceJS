@@ -1,6 +1,6 @@
 {
   "name": "namespacejs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this library provide namespace. it is all. very simple!",
   "tags": ["node", "pubsub", "browser", "namespace", "server", "client"],
   "keywords": ["node", "pubsub", "browser", "namespace", "server", "client"],
