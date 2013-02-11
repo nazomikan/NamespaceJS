@@ -24,7 +24,8 @@
 
   Namespace.create = function () {
     var namespace = createObject(Namespace.prototype)
-      , args = slice.call(arguments);
+      , args = slice.call(arguments)
+      ;
 
     Namespace.apply(namespace, args);
     return namespace;

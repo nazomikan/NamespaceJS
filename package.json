@@ -1,9 +1,9 @@
 {
   "name": "namespacejs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "this library provide namespace. it is all. very simple!",
-  "tags": ["node", "pubsub", "browser", "namespace", "server", "client"],
-  "keywords": ["node", "pubsub", "browser", "namespace", "server", "client"],
+  "tags": ["node", "browser", "namespace", "server", "client"],
+  "keywords": ["node", "browser", "namespace", "server", "client"],
   "author": "nazomikan <nazomikan@gmail.com>",
   "repository": {
     "type": "git",
