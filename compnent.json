@@ -1,0 +1,9 @@
+{
+    "name": "namespacejs",
+    "version": "0.0.7",
+    "main": "./namespace.js",
+    "dependencies": {},
+    "ignore": [
+        "test/"
+    ]
+}
